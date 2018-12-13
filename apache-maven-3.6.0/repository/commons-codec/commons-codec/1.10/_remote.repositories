@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:31:17 KST 2018
+commons-codec-1.10.pom>mvn2=
+commons-codec-1.10.jar>mvn2=
+commons-codec-1.10-sources.jar>mvn2=

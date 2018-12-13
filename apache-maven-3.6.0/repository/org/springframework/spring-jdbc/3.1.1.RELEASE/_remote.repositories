@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Dec 04 14:09:50 KST 2018
+spring-jdbc-3.1.1.RELEASE.jar>central=
+spring-jdbc-3.1.1.RELEASE.pom>mvn2=
+spring-jdbc-3.1.1.RELEASE-sources.jar>mvn2=
+spring-jdbc-3.1.1.RELEASE.jar>mvn2=
+spring-jdbc-3.1.1.RELEASE.pom>central=

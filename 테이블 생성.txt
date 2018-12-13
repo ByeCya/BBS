@@ -1,0 +1,90 @@
+BBS 게시판 (MVC model1 게시판)
+CREATE DATABASE BBS DEFAULT CHARACTER SET UTF8;
+USE BBS;
+
+create table USER(
+	userID varchar(20),
+	userPassword varchar(50),
+	userName varchar(20),
+	userGender varchar(20),
+	userEamil varchar(50),
+	primary key(userID)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table BBS(
+	bbsID int(11),
+	bbsTitle varchar(50),
+	userID varchar(20),
+	bbsDate datetime,
+	bbsContent varchar(2048),
+	bbsAvailable int(11),
+	primary key (bbsID)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table REPLY(
+	replyID int(11),
+	replyBbs int(11),
+	replyUser varchar(20),
+	replyContent varchar(2048),
+	replyDate datetime,
+	replyAvailable int(11),
+	primary key (replyID)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+////////////////////////////////////////////////////////////
+SPRING 게시판(스프링 게시판)
+CREATE DATABASE SPRING DEFAULT CHARACTER SET UTF8;
+USE SPRING
+
+CREATE TABLE BOARD  (
+  IDX BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '인덱스',
+  PARENT_IDX INT COMMENT '부모글 인덱스',
+  TITLE VARCHAR(100) NOT NULL COMMENT '제목',
+  CONTENTS MEDIUMTEXT NOT NULL COMMENT '내용',
+  HIT_CNT INT NOT NULL COMMENT '조회수',
+  DEL_GB VARCHAR(1) NOT NULL COMMENT '삭제구분',
+  CREA_DTM DATETIME COMMENT '생성일자',
+  CREA_ID VARCHAR(30) COMMENT '생성자 ID',
+  PRIMARY KEY (IDX)
+);
+
+CREATE TABLE FILE
+(
+  IDX INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  BOARD_IDX INT NOT NULL,
+  ORIGINAL_FILE_NAME VARCHAR(260) NOT NULL,
+  STORED_FILE_NAME VARCHAR(36) NOT NULL,
+  FILE_SIZE INT,
+  CREA_DTM DATETIME NOT NULL,
+  CREA_ID VARCHAR(30) NOT NULL,
+  DEL_GB VARCHAR(1) DEFAULT 'N' NOT NULL,
+  PRIMARY KEY (IDX)
+);
+
+//////////////////////////////////////////////////////////////
+BOARD 게시판(MVC model2 게시판, spring 게시판)
+CREATE DATABASE BOARD DEFAULT CHARACTER SET UTF8;
+USE BOARD;
+
+CREATE TABLE BOARD(
+bId FLOAT(4) AUTO_INCREMENT,
+bName VARCHAR(20),
+bTitle VARCHAR(100),
+bContent VARCHAR(300),
+bDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+bHit FLOAT(4) DEFAULT 0,
+bGroup FLOAT(4),
+bStep FLOAT(4),
+bIndent FLOAT(4),
+PRIMARY KEY(bId)
+);
+
+CREATE TABLE USER(
+	userID varchar(20),
+	userPassword varchar(50),
+	userName varchar(20),
+	userGender varchar(20),
+	userEamil varchar(50),
+	primary key(userID)
+);
+insert into user values ("test01", "test01", "test01", "남자", "test@test");

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Dec 06 09:31:25 KST 2018
+spring-boot-starter-2.0.0.RELEASE.jar>spring-milestone=
+spring-boot-starter-2.0.0.RELEASE-sources.jar>spring-milestone=
+spring-boot-starter-2.0.0.RELEASE.pom>spring-milestone=

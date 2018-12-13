@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:31:20 KST 2018
+mail-1.4.7.jar>mvn2=
+mail-1.4.7-sources.jar>mvn2=
+mail-1.4.7.pom>mvn2=

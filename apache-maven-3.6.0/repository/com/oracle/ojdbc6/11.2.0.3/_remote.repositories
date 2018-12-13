@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:42:56 KST 2018
+ojdbc6-11.2.0.3-sources.jar>egovframe=
+ojdbc6-11.2.0.3.jar>codelds=
+ojdbc6-11.2.0.3.pom>egovframe=

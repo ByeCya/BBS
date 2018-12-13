@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:31:33 KST 2018
+xml-apis-1.0.b2-sources.jar>mvn2=
+xml-apis-1.0.b2.pom>mvn2=
+xml-apis-1.0.b2.jar>mvn2=

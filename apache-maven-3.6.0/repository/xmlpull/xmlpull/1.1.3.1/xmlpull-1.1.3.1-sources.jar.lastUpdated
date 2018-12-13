@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:31:46 KST 2018
+http\://repo1.maven.org/maven2/.error=
+http\://www.egovframe.go.kr/maven/.error=Could not transfer artifact xmlpull\:xmlpull\:jar\:sources\:1.1.3.1 from/to egovframe (http\://www.egovframe.go.kr/maven/)\: unexpected end of stream on Connection{www.egovframe.go.kr\:80, proxy\=DIRECT hostAddress\=www.egovframe.go.kr/202.30.69.16\:80 cipherSuite\=none protocol\=http/1.1}
+http\://repo1.maven.org/maven2/.lastUpdated=1542681104127
+https\://code.lds.org/nexus/content/groups/main-repo/.error=
+https\://code.lds.org/nexus/content/groups/main-repo/.lastUpdated=1542681106557
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1542681106569
+@default-egovframe-http\://www.egovframe.go.kr/maven/.lastUpdated=1542681104622
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact xmlpull\:xmlpull\:jar\:sources\:1.1.3.1 from/to central (https\://repo.maven.apache.org/maven2)\: No connector factories available

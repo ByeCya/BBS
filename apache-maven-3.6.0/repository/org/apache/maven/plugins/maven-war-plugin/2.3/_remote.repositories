@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:31:25 KST 2018
+maven-war-plugin-2.3-sources.jar>mvn2=
+maven-war-plugin-2.3.jar>mvn2=
+maven-war-plugin-2.3.pom>mvn2=

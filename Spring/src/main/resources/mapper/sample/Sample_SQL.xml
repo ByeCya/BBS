@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="sample">
+	
+	<select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            IDX,
+            TITLE,
+            HIT_CNT,
+            date_format(CREA_DTM,'%Y-%m-%d %H:%i')AS CREA_DTM
+        FROM
+            BOARD
+        WHERE
+            DEL_GB = 'N'
+        order by IDX DESC     
+    ]]>
+</select>
+
+<insert parameterType="hashmap" id="insertBoard" keyProperty="IDX" useGeneratedKeys="true">
+<selectKey resultType="string" keyProperty="IDX" order="BEFORE"> SELECT MAX(IDX)+1 FROM BOARD </selectKey>
+<![CDATA[ 
+            INSERT INTO BOARD
+            (
+                IDX,
+                TITLE,
+                CONTENTS,
+                HIT_CNT,
+                DEL_GB,
+                CREA_DTM,
+                CREA_ID
+            )
+            VALUES
+            (
+                0,
+                #{TITLE},
+                #{CONTENTS},
+                0,
+                'N',
+                SYSDATE(),
+                'Admin'
+            )
+]]>
+</insert>
+
+<update id="updateHitCnt" parameterType="hashmap">
+    <![CDATA[
+        UPDATE BOARD
+        SET
+            HIT_CNT = HIT_CNT + 1
+        WHERE
+            IDX = #{IDX}   
+    ]]>
+</update>
+ 
+<select id="selectBoardDetail" parameterType="hashmap" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            IDX,
+            HIT_CNT,
+            CREA_ID,
+            date_format(CREA_DTM,'%Y-%m-%d %H:%i')AS CREA_DTM,
+            TITLE,
+            CONTENTS
+        FROM
+            BOARD
+        WHERE
+            IDX = #{IDX}       
+    ]]>
+</select>
+
+<update id="updateBoard" parameterType="hashmap">
+    <![CDATA[
+        UPDATE BOARD
+        SET
+            TITLE = #{TITLE},
+            CONTENTS = #{CONTENTS}
+        WHERE
+            IDX = #{IDX}   
+    ]]>
+</update>
+
+<update id="deleteBoard" parameterType="hashmap">
+    <![CDATA[
+        UPDATE BOARD
+        SET
+            DEL_GB = 'Y'
+        WHERE
+            IDX = #{IDX}
+    ]]>
+</update>
+
+<insert id="insertFile" parameterType="hashmap">
+    <![CDATA[
+        INSERT INTO FILE
+        (
+            IDX,
+            BOARD_IDX,
+            ORIGINAL_FILE_NAME,
+            STORED_FILE_NAME,
+            FILE_SIZE,
+            CREA_DTM,
+            CREA_ID
+        )
+        VALUES
+        (
+            0,
+            #{BOARD_IDX},
+            #{ORIGINAL_FILE_NAME},
+            #{STORED_FILE_NAME},
+            #{FILE_SIZE},
+            NOW(),
+            'Admin'
+        )
+    ]]>
+</insert>
+
+<select id="selectFileList" parameterType="hashmap" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            IDX,
+            ORIGINAL_FILE_NAME,
+            ROUND(FILE_SIZE/1024,1) AS FILE_SIZE
+        FROM
+            FILE
+        WHERE
+            BOARD_IDX = #{IDX} AND DEL_GB = 'N'
+    ]]>
+</select>
+
+<update id="deleteFileList" parameterType="hashmap">
+    <![CDATA[
+        UPDATE TB_FILE_01 SET
+            DEL_GB = 'Y'
+        WHERE
+            BOARD_IDX = #{IDX} 
+    ]]>
+</update>
+ 
+<update id="updateFile" parameterType="hashmap">
+    <![CDATA[
+        UPDATE TB_FILE_01 SET
+            DEL_GB = 'N'
+        WHERE
+            IDX = #{FILE_IDX}  
+    ]]>
+</update>
+
+</mapper>

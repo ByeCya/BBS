@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 16:29:59 KST 2018
+aspectjweaver-1.6.10.pom>mvn2=
+aspectjweaver-1.6.10.jar>mvn2=
+aspectjweaver-1.6.10-sources.jar>mvn2=

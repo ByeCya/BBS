@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:33:36 KST 2018
+maven-filtering-1.0-beta-2.jar>central=
+maven-filtering-1.0-beta-2.pom>central=
+maven-filtering-1.0-beta-2-sources.jar>mvn2=

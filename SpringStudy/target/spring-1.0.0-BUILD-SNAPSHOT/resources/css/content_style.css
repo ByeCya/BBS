@@ -1,0 +1,70 @@
+/* css reset */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ border: 0; }
+table{ border-spacing: 0; border: none; border-collapse: 0; }
+th, td{ padding: 0; }
+
+#wrap{
+   width: 100%;
+}
+#wrap table{
+   width: 1100px;
+   border-top: 2px solid #000000;
+}
+#wrap caption{
+   text-align: center;
+}
+#wrap tr{
+   border-bottom: 1px solid #999999;
+}
+#wrap td{
+   height: 100px;
+   text-align: center;
+   border-bottom: 1px solid #999999;
+}
+#wrap .title_line{
+   background-color: #eeeeee;
+   width: 300px;
+}
+#wrap input[type=text]{
+   width: 700px;
+}
+#wrap textarea{
+   width: 700px;
+   height: 300px;
+}
+#wrap .write a, #wrap input[type=submit]{
+   display: inline-block;
+   padding: 5px;
+   border-radius: 6px;
+   background-color: #123456;
+   color: #ffffff;
+   text-align: center;
+}
+#login{
+   width: 600px;
+   height: 500px;
+   text-align: center;
+   background: #cccccc;
+   padding-top: 80px;
+}
+#login input, a{
+   display: block;
+   height: 50px;;
+   line-height: 50px;
+   width: 300px;
+   margin: 30px auto 0 auto;
+   
+   border-radius: 8px;
+}
+#login input, a{
+   color: #cccccc;
+   padding-left: 30px;
+}
+#login input[type=submit], a{
+   background-color: #7d81be;
+   color: #ffffff;
+   text-align: center;
+}

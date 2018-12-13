@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Nov 20 11:31:14 KST 2018
+jackson-core-2.6.4.jar>mvn2=
+jackson-core-2.6.4.pom>mvn2=
+jackson-core-2.6.4-sources.jar>mvn2=

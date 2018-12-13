@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.javalec.spring.dao.UDao">
+	<select id="login" resultType="com.javalec.spring.dto.UDto">
+	<![CDATA[
+		SELECT
+			userID, userPassword, userName, userGender, userEamil
+		FROM
+			USER
+		WHERE
+			userID = #{param1}
+	]]>
+	</select>
+	
+	<insert id="join">
+	<![CDATA[
+		INSERT INTO USER VALUES (#{param1}, #{param2}, #{param3}, #{param4}, #{param5})
+	]]>
+	</insert>
+	
+</mapper>

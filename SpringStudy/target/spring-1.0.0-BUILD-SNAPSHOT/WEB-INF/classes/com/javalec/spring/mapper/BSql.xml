@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.javalec.spring.dao.Dao">
+	<select id="list" resultType="com.javalec.spring.dto.BDto">
+	<![CDATA[
+		SELECT
+			bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent
+		FROM
+			BOARD
+		ORDER BY
+			bGroup DESC, bStep ASC
+	]]>
+	</select>
+	
+	<insert id="write">
+	<![CDATA[
+		INSERT INTO
+			BOARD
+				SELECT 0, #{param1}, #{param2}, #{param3}, NOW(), 0, MAX(bId), 0, 0
+		FROM
+			BOARD
+	]]>
+	</insert>
+	
+	<select id="contentView" resultType="com.javalec.spring.dto.BDto">
+	<![CDATA[
+		SELECT
+			bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent
+		FROM
+			BOARD
+		WHERE
+			bId = #{param1}
+	]]>
+	</select>
+	
+	<update id="upHit">
+	<![CDATA[
+		UPDATE
+			BOARD
+		SET
+			bHit = bHit + 1
+		WHERE
+			bId = #{param1}
+	]]>
+	</update>
+	
+	<update id="modify">
+	<![CDATA[
+		UPDATE
+			BOARD
+		SET
+			bName = #{param2}, bTitle = #{param3}, bContent = #{param4}
+		WHERE
+			bId = #{param1}
+	]]>
+	</update>
+	
+	<select id="reply_view" resultType="com.javalec.spring.dto.BDto">
+	<![CDATA[
+		SELECT
+			bId, bName, bTitle, bContent, bDate, bHit, bGroup, bStep, bIndent
+		FROM
+			BOARD
+		WHERE
+			bId = #{param1}
+	]]>
+	</select>
+	
+	<insert id="reply">
+	<![CDATA[
+		INSERT INTO
+			BOARD(bId, bName, bTitle, bContent, bGroup, bStep, bIndent)
+		VALUES
+			(0, #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6})
+	]]>
+	</insert>
+	
+	<update id="replyShape">
+	<![CDATA[
+		UPDATE
+			BOARD
+		SET
+			bStep = bStep + 1 where bGroup = #{param1} and bStep > #{param2}
+	]]>
+	</update>
+	
+	<delete id="delete">
+	<![CDATA[
+		DELETE FROM
+			BOARD
+		WHERE
+			bId = #{param1}
+	]]>
+	</delete>
+	
+</mapper>

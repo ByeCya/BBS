@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* css reset */
+*{ margin: 0; padding: 0; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ border: 0; }
+table{ border-spacing: 0; border: 0; border-collapse: 0; }
+th, td{ padding: 0; }
+
+#wrap{
+   width: 100%;
+}
+table{
+   width: 100%;
+   text-align: center;
+}
+td{
+   height: 50px;
+   width: 20%;
+}
+.first_line{
+   background-color: red;
+}
+.second_line{
+   background-color: orange;
+}
+.third_line{
+   background-color: yellow;
+}
+.forth_line{
+   background-color: green;
+}
+.fifth_line{
+   background-color: blue;
+}
+.write{
+   margin-top: 30px;
+   text-align: right;
+}
+.write a{
+   display: inline-block;
+   width: 80px;
+   height: 50px;
+   line-height: 50px;
+   background-color: purple;
+   color: #ffffff;
+   text-align: center;
+}
