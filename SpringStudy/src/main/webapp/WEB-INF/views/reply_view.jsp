@@ -5,9 +5,13 @@
 <head>
 <%@ include file="/WEB-INF/include/header.jspf" %>
 </head>
-<body>
-
-	<table width="500" cellpadding="0" cellspacing="0" border="1">
+<body id="write">
+	<table>
+		<colgroup>
+			<col class="inform">
+			<col class="insert">
+		</colgroup>
+        <caption><h1>게시글 답변</h1></caption>
 		<form action="reply" method="post">
 			<input type="hidden" name="bId" value="${reply_view.bId}">
 			<input type="hidden" name="bGroup" value="${reply_view.bGroup}">
@@ -31,13 +35,10 @@
 			</tr>
 			<tr>
 				<td> 내용 </td>
-				<td> <textarea rows="10"  name="bContent">${reply_view.bContent}</textarea></td>
-			</tr>
-			<tr >
-				<td colspan="2"><input type="submit" value="답변"> <a href="list" >목록</a></td>
+				<td> <textarea name="bContent">${reply_view.bContent}</textarea></td>
 			</tr>
 		</form>
 	</table>
-	
+	<input type="submit" value="답변"> <a href="list" >목록</a>
 </body>
 </html>

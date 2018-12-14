@@ -1,42 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <%@ include file="/WEB-INF/include/header.jspf" %>
-<body>
-      <div id="wrap">
-      <table>
-         <tr>
-            <td>π¯»£</td>
-            <td>¿Ã∏ß</td>
-            <td>¡¶∏Ò</td>
-            <td>≥Ø¬•</td>
-            <td>¡∂»∏ºˆ</td>
-         </tr>
-	         <c:forEach items="${list}" var="dto">
-	            <tr>
-	               <td>${dto.bId}</td>
-	               <td>${dto.bName}</td>
-	               <td>
-	                  <c:forEach begin="1" end="${dto.bIndent}">-</c:forEach>
-	                  <a href="content_view?bId=${dto.bId}">${dto.bTitle}</a></td>
-	               <td>${dto.bDate}</td>
-	               <td>${dto.bHit}</td>
-	            </tr>
-	         </c:forEach>
-	     <tr>
-	     	<td colspan="5">
-	     	<a href="list?page=1">[≥°]</a>
-	     		<c:forEach var="i" begin="1" end="${totalCount}">
-	     			<a href="list?page=${i}">[${i}]</a>
-	     		</c:forEach>
-	     	<a href="list?page=${totalCount}">[√≥¿Ω]</a>
-	     </tr>
-      </table>
-      <div class="write">
-         <a href="write_view">±€¿€º∫</a>
-      </div>
-   </div>
+<body id="list">
+     <table>
+		<colgroup>
+			<col class="number">
+			<col class="writer">
+			<col class="title">
+			<col class="watching">
+			<col class="write_day">
+		</colgroup>
+        <caption><h1>Í≤åÏãúÌåê Î™©Î°ù</h1></caption>
+        <tr>
+           <td>Î≤àÌò∏</td>
+           <td>Ïù¥Î¶Ñ</td>
+           <td>Ï†úÎ™©</td>
+           <td>ÎÇ†Ïßú</td>
+           <td>Ï°∞ÌöåÏàò</td>
+        </tr>
+         <c:forEach items="${list}" var="dto">
+            <tr>
+               <td>${dto.bId}</td>
+               <td>${dto.bName}</td>
+               <td>
+                  <c:forEach begin="1" end="${dto.bIndent}">-</c:forEach>
+                  <a href="content_view?bId=${dto.bId}">${dto.bTitle}</a></td>
+               <td>${dto.bDate}</td>
+               <td>${dto.bHit}</td>
+            </tr>
+         </c:forEach>
+     <tr>
+     	<td colspan="5" class="list_page">
+     	<a href="list?page=1">[ÎÅù]</a>
+     		<c:forEach var="i" begin="1" end="${totalCount}">
+     			<a href="list?page=${i}">[${i}]</a>
+     		</c:forEach>
+     	<a href="list?page=${totalCount}">[Ï≤òÏùå]</a>
+     </tr>
+     </table>
+     <div class="write">
+        <a href="write_view">Í∏ÄÏûëÏÑ±</a>
+     </div>
 </body>
 </html>

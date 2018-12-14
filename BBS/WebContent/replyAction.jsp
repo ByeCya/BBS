@@ -6,8 +6,6 @@
 <%@ page import="reply.ReplyDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="bbs" class="bbs.Bbs" scope="page" />
-<jsp:setProperty name="bbs" property="bbsID" />
 <jsp:useBean id="reply" class="reply.Reply" scope="page" />
 <jsp:setProperty name="reply" property="replyContent" />
 <!DOCTYPE html>
@@ -37,7 +35,8 @@
 				script.println("</script>");
 			} else {
 				ReplyDAO replyDAO = new ReplyDAO();
-				int result = replyDAO.write(bbs.getBbsID() , userID, reply.getReplyContent());
+				int replyBbs = (int) session.getAttribute("replyBbs");
+				int result = replyDAO.write( replyBbs, userID, reply.getReplyContent());
 				if (result == -1) {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");

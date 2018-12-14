@@ -26,6 +26,7 @@
 		int bbsID = 0;
 		if (request.getParameter("bbsID") != null) {
 			bbsID = Integer.parseInt(request.getParameter("bbsID"));
+			session.setAttribute("replyBbs", bbsID);
 		}
 		if (bbsID == 0) {
 			PrintWriter script = response.getWriter();
@@ -131,8 +132,6 @@
 			%>
 		
 			<hr>
-		
-		
 		
 			<!-- 댓글(미완)  -->
 		    <div class="container">

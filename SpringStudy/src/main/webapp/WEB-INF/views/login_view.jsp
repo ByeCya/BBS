@@ -5,8 +5,8 @@
 <head>
 <%@ include file="/WEB-INF/include/header.jspf" %>
 </head>
-<body>
-	<form action="login" method="post" id="login">
+<body id="login">
+	<form action="login" method="post">
 		<div>
 			<h1>로그인 화면</h1>
 			<input type="text" name="userID" value="아이디">

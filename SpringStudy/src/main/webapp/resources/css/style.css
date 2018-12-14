@@ -1,70 +1,127 @@
 /* css reset */
-*{ margin: 0; padding: 0; box-sizing: border-box; }
+*{ padding: 0; box-sizing: border-box; }
+body{ font-family: 'Open Sans', sans-serif;}
 li{ list-style: none; }
 a{ text-decoration: none; }
 img{ border: 0; }
-table{ border-spacing: 0; border: none; border-collapse: 0; }
+table{ border-spacing: 1px; border: none; border-collapse: 0; }
 th, td{ padding: 0; }
-
-#wrap{
+input{ border-style: none; }
+/* 게시글 리스트 */
+#list table{
    width: 100%;
-}
-#wrap table{
-   width: 1100px;
    border-top: 2px solid #000000;
 }
-#wrap caption{
+#list th,
+#list td{
+   border-bottom: 1px solid #999999;
+   height: 40px;
+}
+#list td{
    text-align: center;
 }
-#wrap tr{
-   border-bottom: 1px solid #999999;
+#list .number,
+#list .writer{
+   width: 6%;
 }
-#wrap td{
-   height: 100px;
+#list .title{
+   width: 64%;
+}
+#list .watching,
+#list .write_day{
+   width: 12%;
+}
+#list .list_page{
+   margin-top: 10px;
    text-align: center;
-   border-bottom: 1px solid #999999;
 }
-#wrap .title_line{
-   background-color: #eeeeee;
-   width: 300px;
+#list .list_page a{
+   color: #000000;
 }
-#wrap input[type=text]{
-   width: 700px;
+#list .write{
+   margin-top: 10px;
 }
-#wrap textarea{
-   width: 700px;
-   height: 300px;
-}
-#wrap .write a, #wrap input[type=submit]{
+
+#list .write a,
+#write a{
    display: inline-block;
    padding: 5px;
    border-radius: 6px;
-   background-color: #123456;
+   background-color: #6b9ab8;
    color: #ffffff;
    text-align: center;
 }
+/* 로그인, 회원가입 페이지 */
 #login{
-   width: 600px;
-   height: 500px;
-   text-align: center;
-   background: #cccccc;
+   background: #dddddd;
    padding-top: 80px;
+   height: 100%;
 }
-#login input, a{
+#login h1{
+   text-align: center;
+   font-weight: normal;
+}
+#login input, #login a{
    display: block;
    height: 50px;;
    line-height: 50px;
    width: 300px;
    margin: 30px auto 0 auto;
-   
-   border-radius: 8px;
+   border: 1px solid #999999;
+   border-radius: 6px;
+   font-size: 16px;
 }
-#login input, a{
+#login input[type=text]{
+   padding-left: 20px;
    color: #cccccc;
-   padding-left: 30px;
 }
-#login input[type=submit], a{
+#login input[type=submit], #login a{
    background-color: #7d81be;
    color: #ffffff;
    text-align: center;
+}
+#login .radio_group{
+   text-align: center;
+}
+#login input[type=radio]{
+   display: inline-block;
+   height: auto;
+   width: auto;
+}
+/* 컨텐츠, 글 작성, 답글 페이지 */
+#write table{
+   border-top: 1px solid #000000;
+   width: 100%;
+   border-spacing: 1px;
+   margin-bottom: 10px;
+}
+#write tr,
+#write td{
+   border-bottom: 1px solid #cccccc;
+   margin: 1px;
+}
+#write td{
+   padding: 20px;
+   font-weight: bolder;
+}
+#write .inform{
+   width: 10%;
+   background-color: #f2f3ff;
+   padding: 10%;
+}
+#write input[type=text]{
+   width: 90%;
+   border: 1px solid #000000;
+}
+#write textarea{
+   width: 90%;
+   height: 250px;
+}
+#write textarea#editor1{
+	width: auto;
+	height: auto;
+}
+#write input[type=submit]{
+   border: 1px solid #000000;
+   padding: 2px;
 }

@@ -5,13 +5,13 @@
 <head>
 <%@ include file="/WEB-INF/include/header.jspf" %>
 </head>
-<body>
+<body id="write">
    <table>
-      <colgroup>
-         <col class="title_line">
-         <col>
-         <col class="title_line">
-      </colgroup>
+         <colgroup>
+            <col class="inform">
+            <col class="insert">
+         </colgroup>
+        <caption><h1>게시글 상세</h1></caption>
       <form action="modify" method="post">
          <input type="hidden" name="bId" value="${content_view.bId}">
          <tr>
@@ -32,15 +32,13 @@
          </tr>
          <tr>
             <td> 내용 </td>
-            <td> <textarea rows="10" name="bContent" >${content_view.bContent}</textarea></td>
+            <td> <textarea name="bContent" >${content_view.bContent}</textarea></td>
          </tr>
    </table>
-	   <div class="write">
 	      <input type="submit" class="write" value="수정">
 	      <a href="list">목록보기</a>
 	      <a href="delete?bId=${content_view.bId}">삭제</a>
 	      <a href="reply_view?bId=${content_view.bId}">답변</a>
-	   </div>
       </form>
 </body>
 </html>

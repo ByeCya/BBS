@@ -22,7 +22,7 @@ create table BBS(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table REPLY(
-	replyID int(11),
+	replyID int(11) AUTO_INCREMENT,
 	replyBbs int(11),
 	replyUser varchar(20),
 	replyContent varchar(2048),
@@ -31,6 +31,8 @@ create table REPLY(
 	primary key (replyID)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE REPLY ADD CONSTRAINT FK_REPLY_replyBbs_BBS_bbsID FOREIGN KEY (replyBbs)
+ REFERENCES BBS (bbsID)  ON DELETE RESTRICT ON UPDATE RESTRICT;
 ////////////////////////////////////////////////////////////
 SPRING 게시판(스프링 게시판)
 CREATE DATABASE SPRING DEFAULT CHARACTER SET UTF8;

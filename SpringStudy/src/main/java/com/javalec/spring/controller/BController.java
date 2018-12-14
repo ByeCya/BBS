@@ -3,6 +3,7 @@ package com.javalec.spring.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +21,7 @@ import com.javalec.spring.util.Constant;
 
 @Controller
 public class BController {
+	Logger log = Logger.getLogger(this.getClass());
 	
 	//private JdbcTemplate template;
 
